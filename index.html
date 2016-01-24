@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="ko"> <!-- vim: set noet : -->
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>류원하, 현업 엔지니어의 시각에서 본 알고리즘 공부의 장점과 단점</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<!-- Captionss -->
+		<link rel="stylesheet" href="captionss/captionss.min.css">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black-ko.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section data-markdown data-separator="^\n\n\n"	data-separator-vertical="^\n\n"	data-separator-notes="^Note:">
+					<script type="text/template">
+						# 현업 엔지니어의 시각에서 본<br>알고리즘 공부의 장점과 단점
+
+						---
+
+						### 류원하 (Being)
+						#### 넥슨GT 창조기술팀
+						#### Full-stack Dev &amp; Professional Problem Solver
+					</script>
+				</section>
+
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							### 오늘의 발표자는 누굴까요?
+							
+							## <!-- .element: class="fragment" --> 단칼빙
+							
+							<figure class="embed hide-smooth dark" style="width: 40%;">
+								<img data-src="./assets/honedge.png">
+							</figure>
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							## 누구시길래?
+
+							* <!-- .element: class="fragment" --> 알고리즘
+								* <!-- .element: class="fragment" --> 알고스팟 <del>악플러</del> 운영진
+								* <!-- .element: class="fragment" --> KOI 고등부 금상, ACM-ICPC 서울 사이트 우승
+								* <!-- .element: class="fragment" --> 각종 생계형 대회 수상
+								* <!-- .element: class="fragment" --> 프로그래밍 대회 준비 기간 &cong; 7년
+							* <!-- .element: class="fragment" --> 현업 SW 엔지니어
+								* <!-- .element: class="fragment" --> 스타트업, 병특, 뉴욕 리모트, 실리콘 밸리, 넥슨GT
+								* <!-- .element: class="fragment" --> 자세한 내용은 인터뷰에
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							## 뭐하시길래?
+							
+							요새는 이런 문제들을 풉니다 <small>혹은 풀 예정입니다</small>
+
+							* <!-- .element: class="fragment" --> 긴급한 버그 잡으러 출동
+							* <!-- .element: class="fragment" --> 로그 분석 파이프라인 구축
+							* <!-- .element: class="fragment" --> 당장의 서버 성능 개선
+							* <!-- .element: class="fragment" --> 중장기적인 서버 아키텍처 디자인 <small>통신 레이어부터 DB까지</small>
+							* <!-- .element: class="fragment" --> 각종 프로젝트의 기술적 의사결정에 참여
+							* <!-- .element: class="fragment" --> 생산성 저하 등을 야기하는 기술 부채 탕감
+							* <!-- .element: class="fragment" --> 어떻게 하면 좋은 사람을 더 많이 데려올 수 있을지 고민
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							## 시작하기 전에
+						</script>
+					</section>
+
+					<section data-markdown data-separator="^\n\n\n"	data-separator-vertical="^\n\n"	data-separator-notes="^Note:">
+						<script type="text/template">
+							# 현업 엔지니어의 시각에서 본<br>알고리즘 공부의 장점과 단점
+						</script>
+					</section>
+
+					<section data-markdown data-separator="^\n\n\n"	data-separator-vertical="^\n\n"	data-separator-notes="^Note:">
+						<script type="text/template">
+							## 현업 엔지니어의 시각에서 본 <em>프로그래밍 대회 참가 준비를 중심으로 한</em> 알고리즘 공부의 장점과 단점
+
+							---
+
+							프로그래밍 대회 참가 &cong; 알고리즘 공부
+						</script>
+					</section>
+
+					<section data-markdown data-separator="^\n\n\n"	data-separator-vertical="^\n\n"	data-separator-notes="^Note:">
+						<script type="text/template">
+							### <em>대회 준비를 정말 많이 해 본</em> 현업 엔지니어의 시각에서 본 프로그래밍 대회 참가 준비를 중심으로 한 알고리즘 공부의 장점과 단점
+
+							---
+
+							제 경력이 좀 깁니다
+						</script>
+					</section>
+
+					<section data-markdown data-separator="^\n\n\n"	data-separator-vertical="^\n\n"	data-separator-notes="^Note:">
+						<script type="text/template">
+							### <em>고민 많은 학부생들에게 전하는</em> 대회 준비를 정말 많이 해 본 현업 엔지니어의 시각에서 본 프로그래밍 대회 참가 준비를 중심으로 한 알고리즘 공부의 장점과 단점
+
+							---
+
+							학부생들이 온다고 알고 왔습니다
+						</script>
+					</section>
+
+					<section data-markdown data-separator="^\n\n\n"	data-separator-vertical="^\n\n"	data-separator-notes="^Note:">
+						<script type="text/template">
+							### 고민 많은 학부생들에게 전하는 대회 준비를 정말 많이 해 본 현업 엔지니어의 <em>지극히 주관적인</em> 시각에서 본 프로그래밍 대회 참가 준비를 중심으로 한 알고리즘 공부의 장점과 단점
+
+							---
+
+							회사나 단체의 입장을 대변하는 거 아닙니다
+						</script>
+					</section>
+
+					<section data-markdown data-separator="^\n\n\n"	data-separator-vertical="^\n\n"	data-separator-notes="^Note:">
+						<script type="text/template">
+							### 고민 많은 학부생들에게 전하는 대회 준비를 정말 많이 해 본 현업 엔지니어의 지극히 주관적인 시각에서 본 프로그래밍 대회 참가 준비를 중심으로 한 알고리즘 공부의 <em>귀에 걸면 귀걸이고 코에 걸면 코걸이인</em> 장점과 단점
+
+							---
+
+							<del>이런 톡은 대충 사기쳐도 아무도 모릅니다</del>
+						</script>
+					</section>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## 미래를 상상해 봅시다
+
+						### 알고리즘 공부를 열심히 해서 원하던 회사에 취직했습니다.
+					</script>
+				</section>
+
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							당신은 좋은 엔지니어가 될 것입니다. 왜냐하면,
+
+							<figure class="embed hide-smooth dark" style="width: 60%;">
+								<img data-src="./assets/future-hope.png">
+							</figure>
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 1. 반복적인 실패의 경험
+
+							* <!-- .element: class="fragment" --> 문제를 풀면서 틀리는 건 아주 일상적
+							* <!-- .element: class="fragment" --> 내가 틀릴 리 없어 &rarr; <em>아 내가 멍청했구나</em>
+							* <!-- .element: class="fragment" --> <em>디버깅</em>: 오류가 발생했을 때 추적하는 연습
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 2. 알고리즘 문제 해결은 복합적인 과정
+
+							1. <!-- .element: class="fragment" --> <em>자연어</em>로 된 문제를,
+							2. <!-- .element: class="fragment" --> 수학적으로<small>추상적으로</small> <em>모델링</em>해서,
+							3. <!-- .element: class="fragment" --> 해법을 <em>디자인</em>하고,
+							4. <!-- .element: class="fragment" --> 해법의 성능과 타당성을 <em>검증</em>하고,
+							5. <!-- .element: class="fragment" --> 프로그래밍 언어로 <em>구현</em>하고,
+							6. <!-- .element: class="fragment" --> ???
+							7. <!-- .element: class="fragment" --> <del class="fragment">PROFIT!</del><span class="fragment">은 꿈이고 WA <small class="fragment"> RTE <small class="fragment">TLE</small></small></span> <em class="fragment">틀린다</em>
+							8. <!-- .element: class="fragment" --> 틀린 이유를 찾고 적당히 돌아가 <em>반복</em>한다
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 2. 알고리즘 문제 해결은 복합적인 과정 (cont.)
+
+							* <!-- .element: class="fragment" --> 글을 빠른 시간 안에 읽고 <em>의도</em>하는 바를 이해
+							* <!-- .element: class="fragment" --> <em>모델링</em>을 잘못 하면 문제를 못 풀 때도 있음을 이해
+							* <!-- .element: class="fragment" --> 해법은 실행에 옮기기에 앞서 <em>검토</em>가 필요함을 이해
+							* <!-- .element: class="fragment" --> <em>C++은 위험한 언어</em>임을 이해
+							* <!-- .element: class="fragment" --> 아무리 수련해도 인간은 <em>같은 실수를 반복함</em>을 이해 <small>정상입니다</small>
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 3. 멘탈 수련
+
+							<quote style="font-style: italic;">"[...] what does not kill me makes me stronger" - Friedrich Nietzsche</quote>
+
+							<!-- .element: class="fragment" -->번역: <quote style="font-style: italic;">"죽지만 않으면 됨 ㅇㅇ" - 니체</quote>
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 3. 멘탈 수련 (cont.)
+
+							#### 시나리오 A
+
+							* <!-- .element: class="fragment" --> 다른 팀들은 다 푸는 문제를 우리만 못 풀고 있는데
+							* <!-- .element: class="fragment" --> 틀릴 이유가 없는데
+							* <!-- .element: class="fragment" --> WA와 RTE가 번갈아 날아오고
+							* <!-- .element: class="fragment" --> 남은 시간은 얼마 없는데
+							* <!-- .element: class="fragment" --> 당연히 채점 큐는 밀렸고
+							* <!-- .element: class="fragment" --> 팀원은 다른 문제 풀겠다고 키보드를 가져갔고
+							* <!-- .element: class="fragment" --> 프린트된 코드는 눈에 들어오지도 않고
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							<figure class="embed hide-smooth dark" style="width: 60%;">
+								<img data-src="./assets/facepalm2.jpg">
+							</figure>
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 3. 멘탈 수련 (cont.)
+
+							#### 시나리오 B
+
+							* <!-- .element: class="fragment" --> 집에서 혼자 공부하며 문제를 풀었다
+							* <!-- .element: class="fragment" --> 제출하니까 틀렸다는데 아무리 생각해도 틀릴 이유가 없다
+							* <!-- .element: class="fragment" --> 다행히 데이터가 있어서 받아봤더니
+							* <!-- .element: class="fragment" --> 딱 하나 틀린 케이스가 10만줄짜리다
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							<figure class="embed hide-smooth dark" style="width: 60%;">
+								<img data-src="./assets/facepalm.jpg">
+							</figure>
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 3. 멘탈 수련 (cont.)
+
+							#### 시나리오 C, D, ..
+
+							* <!-- .element: class="fragment" --> 끝나고 갓갓들 코드를 봤더니
+								* <!-- .element: class="fragment" --> 뭔 소린지 모르겠다
+								* <!-- .element: class="fragment" --> 혹은, 나는 200줄인데 50줄에 짰다
+								* <!-- .element: class="fragment" --> 혹은, 나는 타임 리밋 안에 간신히 들어왔는데 10ms에 풀었다
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							<figure class="embed hide-smooth dark" style="width: 60%;">
+								<img data-src="./assets/facepalm3.jpg">
+							</figure>
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 3. 멘탈 수련 (cont.)
+
+							* <!-- .element: class="fragment" --> 프로그래밍은 멘탈 컨디션에 영향을 많이 받는 일
+							* <!-- .element: class="fragment" --> 압박 상황에서도 집중해야 할 때 할 수 있어야 함
+							* <!-- .element: class="fragment" --> 세상엔 나보다 똑똑한 사람들이 한바가지이지만,<br>그래도 굴하지 않고 내가 할 일을 내가 한다는 마음을 가져야 함
+							* <!-- .element: class="fragment" --> 노-답이어도 포기하지 않고 끈질기게 물고 늘어질 줄 알아야 함 <small>근성!</small>
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 4. 기타 훌륭한 마음가짐
+
+							* <!-- .element: class="fragment" --> 문제 해결은 즐거운 일이구나!
+							* <!-- .element: class="fragment" --> 오래도록 끙끙 앓던 문제를 푸는 건 더 즐거운 일이구나!
+							* <!-- .element: class="fragment" --> 새로운 걸 배워 익히는 건 즐거운 일이구나!
+							* <!-- .element: class="fragment" --> 여러 직관들
+								* <!-- .element: class="fragment" --> 문제는 작게 쪼개면 풀기 쉽구나!
+								* <!-- .element: class="fragment" --> 경계 조건은 정말 중요하구나!
+								* <!-- .element: class="fragment" --> <del>세상 만사 다 NP구나! 인류는 망했구나!</del>
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 5. 지식은 거들 뿐
+
+							* <!-- .element: class="fragment" --> 자료구조에 대한 깊은 이해
+							* <!-- .element: class="fragment" --> 데이터의 양과 성능 사이의 관계에 대한 감
+							* <!-- .element: class="fragment" --> 영어
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 정리: 지식은 모르겠고 마음가짐에는 확실히 도움이 된다.
+						</script>
+					</section>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						# 그러나 한편,
+					</script>
+				</section>
+
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							당장 회사에 가서 일하면 내가 이렇게 엉망진창인가 싶을 거예요. 왜냐하면,
+
+							<figure class="embed hide-smooth dark" style="width: 60%;">
+								<img data-src="./assets/future-hell.png">
+							</figure>
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 1. 그동안 배운 건 지나치게 자기중심적
+
+							당신의 첫 코드 리뷰는 아마도
+
+							<div style="display: flex; align-items: center; justify-content: center;" class="fragment">
+								<div style="flex: 3; line-height: 150%;">
+									<figure class="embed hide-smooth dark">
+										<img data-src="./assets/codereview.gif">
+									</figure>
+								</div>
+								<div style="flex: 4; line-height: 150%;">
+									<h4>번역<h4>
+
+									<ul style="font-weight: normal;">
+									<li>냥!
+									<li>이리 와보라냥!
+									<li>이게 뭐냥?
+									<li>냥?
+									<li>바보냥!
+									<li>이 똥덩어리 뭐냥!
+									<li>(냥리둥절)
+									</ul>
+								</div>
+							</div>
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 1. 그동안 배운 건 지나치게 자기중심적 (cont.)
+
+							<!-- .element: class="fragment" --> 현실에선 혼자 일할 순 없습니다. 그런데,
+
+							* <!-- .element: class="fragment" --> <em>협업 경험</em>도 음슴
+							* <!-- .element: class="fragment" --> 남에게 <small>특히 프로그래머가 아닌 사람에게</small> 지금 겪는 <em>문제를 처음부터 설명</em>해 본 적이 음슴
+							* <!-- .element: class="fragment" --> <em>복잡한 코드나 설계</em>를 경험해 본 적도 음슴
+							* <!-- .element: class="fragment" --> <em>남의 좋은 코드</em>를 읽어본 적도 음슴
+							* <!-- .element: class="fragment" --> <em>남의 코드를 활용</em>해 본 적도 음슴
+							* <!-- .element: class="fragment" --> <em>남이 읽을 것을 전제</em>로 코딩해 본 경험도 음슴
+							* <!-- .element: class="fragment" --> 항상 시간에 쫓긴 구현만 했지 <del>똥코드 발사</del>
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 잠깐: 파인만 알고리즘
+
+							1. <!-- .element: class="fragment" --> <quote style="font-style: italic;">Write down the problem.</quote>
+							1. <!-- .element: class="fragment" --> <quote style="font-style: italic;">Think real hard.</quote>
+							1. <!-- .element: class="fragment" --> <quote style="font-style: italic;">Write down the solution.</quote>
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 2. 실제 문제는 알고리즘 문제와 <em>많이</em> 다름
+
+							* <!-- .element: class="fragment" --> 기획서 <em>&ne;</em> 문제 디스크립션
+								* <!-- .element: class="fragment" --> 무엇이 가능하고 불가능한지 모르니까
+							* <!-- .element: class="fragment" --> 아예 <em>잘 정의되지 않은 문제</em>가 훨씬 많음
+							* <!-- .element: class="fragment" --> <em>답이 하나</em>인 경우는 드물다
+								* <!-- .element: class="fragment" --> 알고리즘 문제의 솔루션은 보통 하나지만
+								* <!-- .element: class="fragment" --> 엔지니어링 문제는 하나가 아님
+								* <!-- .element: class="fragment" --> 답이 하나뿐인 문제?
+							* <!-- .element: class="fragment" --> 억지로 알고리즘 문제로 바꾸다보면 <em>오버엔지니어링</em>
+							* <!-- .element: class="fragment" --> Step 1: 문제를 적는다.
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 3. 쌓은 지식 대다수는 쓸모없음
+
+							* <!-- .element: class="fragment" --> Maximum flow? <small>ㅋㅋ</small>
+							* <!-- .element: class="fragment" --> DP? <small>ㅋㅋㅋ</small>
+							* <!-- .element: class="fragment" --> Backtracking? <small>ㅋㅋㅋㅋ</small>
+							* <!-- .element: class="fragment" --> KMP? <small>ㅋㅋㅋㅋㅋ</small>
+							* <!-- .element: class="fragment" --> DFS? <small>어 이 정도는 짤 수도 있겠다</small>
+							* <!-- .element: class="fragment" --> 기하? <small>게임 프로그래머라면 어느 정도는</small>
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 정리: 실무랑 많이 다른 건 사실이긴 하다.
+						</script>
+					</section>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						### 그래서 어쩌라고요?
+
+						* <!-- .element: class="fragment" --> 뭔가를 공부한다는 건 일단 훌륭한 것 <small>(짝짝짝)</small>
+						* <!-- .element: class="fragment" --> 재미없는 걸 공부하는 건 고통스러움
+							* <!-- .element: class="fragment" --> 재미없다면 다른 공부 하세요. 공부할 거 많음 <del>퇴장하셔도 됩니다</del>
+						* <!-- .element: class="fragment" --> 재미있다면 계속 하세요
+						* <!-- .element: class="fragment" --> 사실 현업에서 마주할 어려움은 미리 준비하기 어려움, 알고만 있으시라
+						* <!-- .element: class="fragment" --> 그래도 좀 더 잘 하고 싶다면 다른 분야의 공부도 하면 됨
+							* <!-- .element: class="fragment" --> 스킬 랭크 (x) INT 스탯 (o)
+							* <!-- .element: class="fragment" --> 최적화 문제 <small>인생은 NP입니다 여러분</small>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## 뭐가 최선인지는 나도 몰랑 :p
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## <del>EOD</del>
+
+						### <del>들어주셔서 감사합니다</del>
+					</script>
+				</section>
+
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							## 조금만 더 현실적인 결론
+
+							예시일 뿐
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 인접한 가지로 뻗어나가기
+
+							* <!-- .element: class="fragment" --> Modern C++
+								* <!-- .element: class="fragment" --> 새로운 언어 컨셉들 &rarr; 다른 언어 공부
+							* <!-- .element: class="fragment" --> 마라톤 매치
+								* <!-- .element: class="fragment" --> 성능 최적화 &rarr; 하드웨어, 아키텍처, 컴파일러, ...
+							* <!-- .element: class="fragment" --> 수학
+								* <!-- .element: class="fragment" --> 이산수학
+								* <!-- .element: class="fragment" --> 선형대수학
+								* <!-- .element: class="fragment" --> 확률과 통계
+									* <!-- .element: class="fragment" --> 기계 학습
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 회고하기
+
+							* <!-- .element: class="fragment" --> 남의 코드를 보고 공부할 것
+								* <!-- .element: class="fragment" --> 깔끔하고 명료한 스타일을 가진 사람들이 있음
+							* <!-- .element: class="fragment" --> 내 코드를 다시 써 볼 것
+								* <!-- .element: class="fragment" --> 재사용성
+								* <!-- .element: class="fragment" --> 가독성
+							* <!-- .element: class="fragment" --> 글로 문제와 풀이를 정리해볼 것
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							### 딴짓하기
+
+							* <!-- .element: class="fragment" --> 동아리에서 같이 연습할 환경을 만들고 싶다 &rarr; <em>슬랙 봇/웹 앱 개발</em>
+							* <!-- .element: class="fragment" --> 공부한 히스토리를 관리하고 싶다 &rarr; <em>git</em>
+							* <!-- .element: class="fragment" --> 에디터 하나는 알아야 하지 않나 &rarr; <em>vim</em>
+							* <!-- .element: class="fragment" --> 기하 문제 시각화해보기 &rarr; <em>수많은 도구들</em> <small>d3.js, MetaPost, matplotlib, ...</small>
+							* <!-- .element: class="fragment" --> 알고스팟에 기여하고 싶다 &rarr; <em>django</em> <small>github/jongman/algospot</small>
+							* <!-- .element: class="fragment" --> 채점 시스템을 만들어보고 싶다 &rarr; <em>시스템 프로그래밍</em>
+						</script>
+					</section>
+				</section>
+
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							좀 더 성장하고 싶다면?
+
+							# <!-- .element: class="fragment" data-fragment-index="1" --> We're hiring! (...)
+
+							<figure class="embed hide-smooth dark fragment" style="width: 40%;" data-fragment-index="1">
+								<img data-src="./assets/nexon-gt.png">
+							</figure>
+						</script>
+					</section>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## <small>진짜</small> EOD
+
+						### 들어주셔서 감사합니다
+					</script>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				width: 1120,
+				height: 700,
+				controls: true,
+				progress: false,
+				center: true,
+				slideNumber: true,
+				history: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js' },
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+				// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+				if (event.currentSlide.getAttribute('data-background-video')) {
+					var bg = Reveal.getSlideBackground(event.indexh, event.indexv);
+					var video = bg.querySelector('video');
+					if (video) {
+						video.setAttribute('controls', true);
+						video.style.zIndex = 100;
+						setTimeout(function() { video.pause() }, 0);
+					}
+				}
+			});
+
+			Reveal.addEventListener( 'fragmentshown', function( event ) {
+				// event.fragment = the fragment DOM element
+				event.fragments.forEach(function(fragment) {
+					var video = fragment.querySelector('video');
+					if (!!video && video.hasAttribute('data-autoplay')) {
+						video.pause();
+						video.currentTime = 0;
+						console.log(video.getAttribute('data-playback-rate'));
+						if (video.hasAttribute('data-current-time')) {
+							video.currentTime = Number(video.getAttribute('data-current-time'));
+						}
+						if (video.hasAttribute('data-playback-rate')) {
+							video.playbackRate = Number(video.getAttribute('data-playback-rate'));
+						}
+						video.play();
+					}
+				});
+			});
+		</script>
+
+	</body>
+</html>

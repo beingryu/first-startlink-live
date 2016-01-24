@@ -1,0 +1,22 @@
+{
+  "name": "CaptionSS",
+  "version": "1.1.0",
+  "authors": [
+    "jbranchaud <jbranchaud@gmail.com>"
+  ],
+  "description": "Sensible CSS Image Captions",
+  "main": "captionss.css",
+  "license": "MIT",
+  "homepage": "http://captionss.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "index.html",
+    "examples.html",
+    "img",
+    "CONTRIBUTING.md"
+  ]
+}

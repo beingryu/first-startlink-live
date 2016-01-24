@@ -1,0 +1,341 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+	<head>
+		<!-- Metadata -->
+		<meta charset="utf-8">
+
+		<title>CaptionSS Examples</title>
+
+		<!-- Styling -->
+		<link href="captionss.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			* {
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			#container {
+				width: 840px;
+				margin: 0 auto;
+				padding: 0;
+				position: relative;
+			}
+			#content {
+				position: absolute;
+				top: 50px;
+			}
+			header {
+				display: block;
+				width: 100%;
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				z-index: 1;
+				background: rgba(200,200,200,0.7);
+			}
+			#headerContent {
+				width: 840px;
+				margin: 0 auto;
+			}
+			footer {
+				margin-top: 0.5em;
+				padding: 0.5em;
+				font-size: smaller;
+			}
+			div.example {
+				padding: 1.0em;
+				border-bottom: 1px solid rgba(200,200,200,1.0);
+			}
+			figure.img1 {
+				width: 400px;
+			}
+			figure.img2 {
+				width: 300px;
+			}
+			code {
+				color: rgba(200,200,200,1.0);
+			}
+			a {
+				text-decoration: none;
+				color: rgba(200,50,50,1.0);
+			}
+			a:hover {
+				color: rgba(170,20,20,1.0);
+				border-bottom: dotted 1px rgba(170,20,20,1.0);
+			}
+		</style>
+
+		<!-- Scripts -->
+
+	</head>
+
+	<body>
+
+		<div id="container">
+
+		<div id="content">
+
+			<header>
+
+				<div id="headerContent">
+
+					<h1>CaptionSS Examples</h1>
+
+				</div>
+
+			</header>
+
+			<div id="refactor01" class="example">
+
+				<p>
+					Default embedded image caption<br />
+					<code>embed (bottom) (static) (normal) (neutral)</code>
+				</p>
+
+				<figure class="img1 embed">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+			</div>
+
+			<div id="refactor02" class="example">
+
+				<p>
+					Default embedded image caption at top<br />
+					<code>embed-top (static) (normal) (neutral)</code>
+				</p>
+
+				<figure class="img1 embed-top">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+			</div>
+
+			<div id="refactor03" class="example">
+
+				<p>
+					All three themes (neutral,light,dark) with embedded defaults.
+				</p>
+
+				<figure class="img1 embed">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+				<figure class="img1 embed light">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+				<figure class="img1 embed dark">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+			</div>
+
+			<div id="refactor04" class="example">
+
+				<p>
+					All four font sizes (normal, medium, large, xlarge) with embedded defaults.
+				</p>
+
+				<figure class="img1 embed">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+				<figure class="img1 embed medium">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+				<figure class="img1 embed large">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+				<figure class="img1 embed xlarge">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+			</div>
+
+			<div id="refactor05" class="example">
+
+				<p>
+					Default overlay and overlay with smooth reveal<br />
+					<code>overlay (reveal/reveal-smooth) (normal) (neutral)</code>
+				</p>
+
+				<figure class="img1 overlay">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+				<figure class="img1 overlay reveal-smooth">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+				<p>
+					Default overlay and overlay with smooth reveal<br />
+					<code>embed-over (reveal/reveal-smooth) (normal) (neutral)</code>
+				</p>
+
+				<figure class="img1 embed-over">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+				<figure class="img1 embed-over reveal-smooth">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+			</div>
+
+			<div id="refactor06" class="example">
+
+				<p>
+					Bottom/Top embedded image caption that hides on hover<br />
+					<code>embed/embed-top (hide) (normal) (neutral)</code>
+				</p>
+
+				<figure class="img1 embed hide">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+				<figure class="img1 embed-top hide">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+			</div>
+
+			<div id="refactor07" class="example">
+
+				<p>
+					Bottom/Top embedded image caption that hides smoothly on hover
+					<br />
+					<code>embed/embed-top (hide-smooth) (normal) (neutral)</code>
+				</p>
+
+				<figure class="img1 embed hide-smooth">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+				<figure class="img1 embed-top hide-smooth">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+			</div>
+
+			<div id="refactor08" class="example">
+
+				<p>
+					Bottom/Top embedded image caption that reveals on hover
+					<br />
+					<code>embed/embed-top (reveal) (normal) (neutral)</code>
+				</p>
+
+				<figure class="img1 embed reveal">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+				<figure class="img1 embed-top reveal">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+			</div>
+
+			<div id="refactor09" class="example">
+
+				<p>
+					Bottom/Top embedded image caption that reveals smoothly on hover
+					<br />
+					<code>embed/embed-top (reveal-smooth) (normal) (neutral)</code>
+				</p>
+
+				<figure class="img1 embed reveal-smooth">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+				<figure class="img1 embed-top reveal-smooth">
+					<img src="img/CatByWall.jpg" alt="Cat By Wall">
+					<figcaption>
+						A stray cat waiting on a sidewalk in Grand Bourg, Argentina.
+					</figcaption>
+				</figure>
+
+			</div>
+
+			<footer>
+
+				<p>
+
+					Built by <a href="http://joshbranchaud.com">Josh Branchaud</a>
+					|
+					Photos also by <a href="http://flickr.com/jbranchaud">Josh</a>
+
+				</p>
+
+			</footer>
+
+		</div>
+
+		</div>
+
+	</body>
+
+</html>
